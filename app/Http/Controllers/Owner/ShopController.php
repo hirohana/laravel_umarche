@@ -61,9 +61,24 @@ class ShopController extends Controller
      */
     public function update(UploadImageRequest $request, $id)
     {
-        $imageFile = $request->image;
-        $fileName = ImageService::upload($imageFile, 'shops');
+        $request->validate([
+            'name' => 'required|string|max:50',
+            'information' => 'required|string|max:1000',
+            'is_selling' => 'required',
+        ]);
 
-        return redirect()->route('owner.shops.index');
+        $shop = Shop::findOrFail($id);
+        $shop->name = $request->name;
+        $shop->information = $request->information;
+        $shop->is_selling = $request->is_selling;
+
+        $imageFile = $request->image;
+        if (!is_null($imageFile) && $imageFile->isValid()) {
+            $shop->filename =  ImageService::upload($imageFile, 'shops');
+        }
+
+        $shop->save();
+
+        return redirect()->route('owner.shops.index')->with(['message' => '店舗情報を更新しました。', 'status' => 'info']);
     }
 }
