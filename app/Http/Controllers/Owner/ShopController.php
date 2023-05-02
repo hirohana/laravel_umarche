@@ -27,7 +27,7 @@ class ShopController extends Controller
             }
 
             return $next($request);
-        })->only('edit');
+        });
     }
 
     public function index()
