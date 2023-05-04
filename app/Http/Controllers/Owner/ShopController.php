@@ -72,7 +72,7 @@ class ShopController extends Controller
 
         $imageFile = $request->image;
         if (!is_null($imageFile) && $imageFile->isValid()) {
-            $shop->filename =  ImageService::upload($imageFile, 'shops');
+            $shop->filename = ImageService::upload($imageFile, 'shops');
         }
 
         $shop->save();
