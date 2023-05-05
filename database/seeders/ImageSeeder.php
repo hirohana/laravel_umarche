@@ -17,14 +17,35 @@ class ImageSeeder extends Seeder
         DB::table('images')->insert([
             [
                 'owner_id' => 1,
-                'title' => 'ここに画像のタイトルが入ります1。',
-                'filename' => "",
+                'title' => null,
+                'filename' => "sample1.jpg",
             ],
             [
-                'owner_id' => 1,
-                'title' => 'ここに画像のタイトルが入ります2。',
-                'filename' => "",
+                'owner_id' => 2,
+                'title' => null,
+                'filename' => "sample2.jpg",
             ],
+            [
+                'owner_id' => 3,
+                'title' => null,
+                'filename' => "sample3.jpg",
+            ],
+            [
+                'owner_id' => 4,
+                'title' => null,
+                'filename' => "sample4.jpg",
+            ],
+            [
+                'owner_id' => 5,
+                'title' => null,
+                'filename' => "sample5.jpg",
+            ],
+            [
+                'owner_id' => 6,
+                'title' => null,
+                'filename' => "sample6.jpg",
+            ],
+
         ]);
     }
 }
