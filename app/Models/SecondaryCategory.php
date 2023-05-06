@@ -13,4 +13,9 @@ class SecondaryCategory extends Model
     {
         return $this->belongsTo(PrimaryCategory::class);
     }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
