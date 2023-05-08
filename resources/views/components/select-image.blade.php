@@ -19,17 +19,17 @@
       <main class="modal__content" id="{{ $modal }}-content">
         <div class="flex flex-wrap">
           @foreach ($images as $image )
-              <div class="w-1/4 p-2 md:p-4">
-              <div class="border rounded-md p-2 md:p-4">
-                <img class="image" data-id="{{ $name }}_{{ $image->id }}"
-                data-file="{{ $image->filename }}"
-                data-path="{{ asset('storage/products/') }}"
-                data-modal="{{ $modal }}"
-                src="{{ asset('storage/products/' . $image->filename)}}">
-                <div class="text-gray-700">{{ $image->title }}</div>
-              </div>
-              </div>
-            @endforeach
+            <div class="w-1/4 p-2 md:p-4">
+            <div class="border rounded-md p-2 md:p-4">
+              <img class="image" data-id="{{ $name }}_{{ $image->id }}"
+              data-file="{{ $image->filename }}"
+              data-path="{{ asset('storage/products/') }}"
+              data-modal="{{ $modal }}"
+              src="{{ asset('storage/products/' . $image->filename)}}">
+              <div class="text-gray-700">{{ $image->title }}</div>
+            </div>
+            </div>
+          @endforeach
           </div>
       </main>
       <footer class="modal__footer">
@@ -43,7 +43,6 @@
 
 <div class="flex justify-around items-center mb-4">
   <a class="py-2 px-4 bg-gray-200" data-micromodal-trigger="{{ $modal }}" href='javascript:;'>ファイルを選択</a>
-  {{-- <a class="py-2 px-4 bg-gray-200" data-micromodal-trigger="{{ $modal }}" href='javascript:;'>ファイルを選択</a> --}}
   <div class="w-1/4">
     <img id="{{ $name }}_thumbnail" @if($cImage) src="{{ asset('storage/products/' . $cImage)}}" @else src="" @endif src="">
   </div>

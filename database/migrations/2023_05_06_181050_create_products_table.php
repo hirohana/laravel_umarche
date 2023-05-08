@@ -15,11 +15,11 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            // $table->string('name');
-            // $table->text('information');
-            // $table->unsignedInteger('price');
-            // $table->boolean('is_selling');
-            // $table->integer('sort_order');
+            $table->string('name');
+            $table->text('information');
+            $table->unsignedInteger('price');
+            $table->boolean('is_selling');
+            $table->integer('sort_order');
             $table->foreignId('shop_id')
             ->constrained()
             ->onUpdate('cascade')
