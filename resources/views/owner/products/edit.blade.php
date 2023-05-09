@@ -1,3 +1,7 @@
+@php
+   use App\Constants\Common;
+@endphp
+
 <x-app-layout>
   <x-slot name="header">
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -48,8 +52,8 @@
                       </div>
                       <div class="p-2 w-1/2 mx-auto">
                         <div class="relative flex justify-around">
-                          <div><input type="radio" name="type" value="1" class="mr-2" checked>追加</div>
-                          <div><input type="radio" name="type" value="2" class="mr-2" >削減</div>
+                          <div><input type="radio" name="type" value="{{ Common::PRODUCT_LIST['add'] }}" class="mr-2" checked>追加</div>
+                          <div><input type="radio" name="type" value="{{ Common::PRODUCT_LIST['reduce'] }}" class="mr-2" >削減</div>
                         </div>
                       </div>
                       <div class="p-2 w-1/2 mx-auto">
